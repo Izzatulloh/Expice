@@ -1,6 +1,6 @@
 class Menu {
     constructor(options) {
-        if (typeof options.left__rotate == "string" || typeof options.right__rotate == 'string' || typeof options.last == 'string' || typeof options.menu == 'string' || typeof options.first == 'string' || typeof options.nav == 'string'
+        if (typeof options.left__rotate == "string" || typeof options.right__rotate == 'string' || typeof options.last == 'string' || typeof options.menu == 'string' || typeof options.first == 'string' || typeof options.nav == 'string' || typeof options.body == 'string'
         ) {
             this.last = document.querySelector(options.last)
             this.nav = document.querySelector(options.nav)
@@ -9,14 +9,18 @@ class Menu {
             this.menu = document.querySelector(options.menu)
             this.first = document.querySelector(options.first)
             this.nav = document.querySelector(options.nav)
-        } else if (options.left__rotate instanceof HTMLElement || options.right__rotate instanceof HTMLElement || options.menu instanceof HTMLElement || options.last instanceof HTMLElement || options.first instanceof HTMLElement) {
+            this.body = document.querySelector(options.body)
+        } else if (options.left__rotate instanceof HTMLElement || options.right__rotate instanceof HTMLElement || options.menu instanceof HTMLElement || options.last instanceof HTMLElement || options.first instanceof HTMLElement || options.body instanceof HTMLElement) {
             this.left__rotate = options.left__rotate
             this.last = options.last
             this.right__rotate = options.right__rotate
             this.menu = options.menu
             this.first = options.first
             this.nav = options.nav
+            this.body = options.body
+            
         }
+        
 
         this.menu.addEventListener('click', () => {
             this.left__rotate.classList.toggle("active");
@@ -31,9 +35,10 @@ class Menu {
             this.nav.style.transition = `500ms linear`;
             this.menu.classList.toggle("active");
             this.menu.style.transition = `500ms linear`;
-            
+            this.body.style.overflow= 'hidden'
 
         })
+   
       
 
         
@@ -48,5 +53,6 @@ const Nav = new Menu({
     left__rotate: ".first__rotate",
     right__rotate: ".sec__rotate",
     menu: ".menu",
-    nav: '.header__nav-item'
+    nav: '.header__nav-item',
+    body: 'body'
 })
