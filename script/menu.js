@@ -35,10 +35,14 @@ class Menu {
             this.nav.style.transition = `500ms linear`;
             this.menu.classList.toggle("active");
             this.menu.style.transition = `500ms linear`;
-            this.body.style.overflow= 'hidden'
-
+            if (this.menu.classList.length == 2) {
+                this.body.style.overflow = 'hidden'
+            } else{
+                this.body.style.overflow = 'auto'
+            }
+         
         })
-   
+        
       
 
         
