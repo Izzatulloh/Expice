@@ -651,11 +651,6 @@
         font-size: 18px;
     }
 
-    .location {
-        left: 0;
-        top: 130%;
-    }
-
     .header__title {
         font-size: 40px;
         width: 500px;
@@ -700,7 +695,10 @@
         right: -30%;
     }
 
-
+    .location {
+        left: 0;
+        top: 650px;
+    }
 }
 
 @media(max-width:730px) {
@@ -848,7 +846,7 @@
     }
 
     .location {
-        top: 95%;
+        top:480px;
     }
 
     .nav__title {
@@ -995,7 +993,7 @@
     }
 
     .form__item {
-        width: 200px;
+        width: 240px;
         margin-top: 30px;
     }
 
